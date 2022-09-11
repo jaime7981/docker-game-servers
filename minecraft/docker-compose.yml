@@ -1,0 +1,21 @@
+version: "3.9"
+
+services:
+  mc:
+    image: itzg/minecraft-server:java17-jdk
+    ports:
+      - 25565:25565/udp
+    volumes:
+     - ./world_data:/worlds/world
+     - ./config_data:/data
+    environment:
+      EULA: "TRUE"
+      WORLD: /worlds/world
+      FORCE_WORLD_COPY:  "true"
+      MEMORY: 2G
+      VERSION: 1.19.2
+      TYPE: FORGE
+      FORGEVERSION: 43.1.1
+    tty: true
+    stdin_open: true
+    restart: unless-stopped
