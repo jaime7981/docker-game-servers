@@ -6,16 +6,18 @@ services:
     ports:
       - 25565:25565/udp
     volumes:
-     - ./world_data:/worlds/world
+     - ./world_data:/worlds
      - ./config_data:/data
+     - ./modpacks:/modpacks
     environment:
       EULA: "TRUE"
       WORLD: /worlds/world
       FORCE_WORLD_COPY:  "true"
+      SETUP_ONLY: "TRUE"
       MEMORY: 2G
       VERSION: 1.19.2
-      TYPE: FORGE
-      FORGEVERSION: 43.1.1
+      #TYPE: FORGE
+      #FORGEVERSION: 43.1.1
     tty: true
     stdin_open: true
     restart: unless-stopped
