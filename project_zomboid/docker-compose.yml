@@ -1,0 +1,12 @@
+version: "3.9"
+
+services:
+  pz:
+    build: ./
+    ports:
+      - 16261:16261/udp
+      - 16262:16262/udp
+    volumes:
+     - ./pzs:/pzs
+     - ./pzuser:/home/pzuser
+    tty: true
