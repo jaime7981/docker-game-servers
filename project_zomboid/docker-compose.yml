@@ -6,7 +6,9 @@ services:
     ports:
       - 16261:16261/udp
       - 16262:16262/udp
+      - 16263:16263/udp
     volumes:
      - ./pzs:/pzs
      - ./pzuser:/home/pzuser
     tty: true
+    #command: tail -f /dev/null
